@@ -1,72 +1,20 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MY AREA — Everything around you</title>
-  <meta name="description" content="MY AREA connects you with useful things, people, businesses and services around you." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{--ink:#101828;--muted:#667085;--line:#eaecf0;--soft:#f7f8fa;--accent:#635bff;--accent2:#7c3aed;--card:#fff;--shadow:0 18px 50px rgba(16,24,40,.08)}
-    *{box-sizing:border-box} body{margin:0;background:#fafafa;color:var(--ink);font-family:'DM Sans',sans-serif} button,input{font:inherit}
-    .shell{max-width:1180px;margin:auto;padding:22px 22px 60px}.top{display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk';font-weight:700;font-size:23px;letter-spacing:-.6px}.mark{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;color:#fff;font-size:17px;box-shadow:0 8px 20px rgba(99,91,255,.25)}
-    .loc{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 15px;color:#475467;display:flex;align-items:center;gap:7px;font-size:14px}.loc b{color:var(--ink)}
-    .hero{margin-top:34px;border-radius:30px;padding:48px 44px;background:radial-gradient(circle at 85% 15%,rgba(124,58,237,.17),transparent 32%),linear-gradient(135deg,#f1efff,#fff 62%);border:1px solid #ece9ff;position:relative;overflow:hidden}.hero:after{content:'';position:absolute;width:220px;height:220px;border-radius:50%;right:-80px;bottom:-120px;background:rgba(99,91,255,.09)}h1{font-family:'Space Grotesk';font-size:clamp(38px,6vw,68px);line-height:.98;letter-spacing:-3px;max-width:690px;margin:0 0 17px}.hero p{font-size:18px;color:#475467;max-width:610px;line-height:1.55;margin:0 0 28px}.search{max-width:760px;background:#fff;border:1px solid #e4e7ec;border-radius:18px;padding:7px;display:flex;box-shadow:0 12px 35px rgba(16,24,40,.09);position:relative;z-index:2}.search input{border:0;outline:0;flex:1;padding:13px 15px;color:var(--ink);background:transparent}.search button{border:0;border-radius:13px;padding:12px 18px;background:var(--ink);color:#fff;font-weight:600;cursor:pointer}.ai{margin-top:13px;display:inline-flex;align-items:center;gap:9px;border:1px solid #ddd8ff;background:#fff;color:#4c43c7;border-radius:999px;padding:10px 15px;font-weight:600;cursor:pointer}.spark{font-size:17px}
-    .section{margin-top:38px}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:16px}.section h2{font-family:'Space Grotesk';font-size:24px;margin:0;letter-spacing:-.7px}.section-head span{color:var(--muted);font-size:14px}.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.cat{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 10px;min-height:112px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;cursor:pointer;transition:.2s}.cat:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#d8d4ff}.icon{font-size:28px}.cat strong{font-size:13px}.near{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.place{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;display:flex;gap:14px}.thumb{width:58px;height:58px;border-radius:15px;background:var(--soft);display:grid;place-items:center;font-size:27px;flex:none}.place h3{margin:1px 0 5px;font-size:16px}.place p{margin:0;color:var(--muted);font-size:13px;line-height:1.45}.pill{display:inline-block;margin-top:8px;padding:5px 8px;border-radius:999px;background:#f2f4f7;font-size:11px;color:#475467}.bottom{margin-top:40px;border-top:1px solid var(--line);padding-top:24px;display:flex;justify-content:space-between;color:#98a2b3;font-size:13px}.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;background:#101828;color:#fff;padding:12px 17px;border-radius:12px;transition:.25s;pointer-events:none;font-size:14px}.toast.show{opacity:1;transform:translate(-50%,0)}
-    @media(max-width:800px){.grid{grid-template-columns:repeat(3,1fr)}.near{grid-template-columns:1fr}.hero{padding:35px 24px}.top{align-items:flex-start}.loc{font-size:12px}.brand{font-size:20px}}
-    @media(max-width:480px){.shell{padding:16px 14px 45px}.loc{padding:8px 11px}.hero{margin-top:22px;border-radius:23px;padding:30px 20px}h1{letter-spacing:-2px}.hero p{font-size:16px}.search{display:flex}.search button{padding:11px 13px}.grid{gap:8px}.cat{min-height:100px;padding:13px 5px}.icon{font-size:24px}.bottom{display:block;line-height:1.8}}
-  </style>
-</head>
-<body>
-  <main class="shell">
-    <header class="top">
-      <div class="brand"><div class="mark">M</div>MY AREA</div>
-      <button class="loc" id="locationBtn">📍 <span>Current location</span></button>
-    </header>
-
-    <section class="hero">
-      <h1>Everything you need,<br>around you.</h1>
-      <p>Discover nearby shops, food, rides, home services, repairs and more — all in one place.</p>
-      <div class="search">
-        <input id="search" placeholder="What do you need around you?" aria-label="Search MY AREA" />
-        <button id="searchBtn">Search</button>
-      </div>
-      <button class="ai" id="aiBtn"><span class="spark">✦</span> Ask AREA AI</button>
-    </section>
-
-    <section class="section">
-      <div class="section-head"><h2>What are you looking for?</h2><span>Explore your area</span></div>
-      <div class="grid">
-        <button class="cat"><span class="icon">🚗</span><strong>Rides</strong></button>
-        <button class="cat"><span class="icon">🛍️</span><strong>Shops</strong></button>
-        <button class="cat"><span class="icon">🍲</span><strong>Food</strong></button>
-        <button class="cat"><span class="icon">🏠</span><strong>Home Services</strong></button>
-        <button class="cat"><span class="icon">🔧</span><strong>Repairs</strong></button>
-        <button class="cat"><span class="icon">＋</span><strong>More</strong></button>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-head"><h2>Around you now</h2><span>Based on your location</span></div>
-      <div class="near">
-        <article class="place"><div class="thumb">🛒</div><div><h3>Nearby shops</h3><p>Find products and stores close to you.</p><span class="pill">Explore stores</span></div></article>
-        <article class="place"><div class="thumb">🍛</div><div><h3>Food around you</h3><p>Discover local restaurants and food vendors.</p><span class="pill">See food</span></div></article>
-        <article class="place"><div class="thumb">🧰</div><div><h3>Available services</h3><p>Find people ready to help in your area.</p><span class="pill">Find a service</span></div></article>
-      </div>
-    </section>
-
-    <footer class="bottom"><span>MY AREA · Connecting your local world</span><span>AREA AI is coming with you.</span></footer>
-  </main>
-  <div class="toast" id="toast"></div>
-  <script>
-    const toast=document.getElementById('toast');
-    function show(msg){toast.textContent=msg;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2200)}
-    document.getElementById('searchBtn').onclick=()=>{const q=document.getElementById('search').value.trim();show(q?`Searching your area for “${q}”…`:'Tell us what you need first.')};
-    document.getElementById('aiBtn').onclick=()=>show('AREA AI will help you find what you need nearby.');
-    document.getElementById('locationBtn').onclick=()=>show('Location access will be connected in the next stage.');
-    document.querySelectorAll('.cat').forEach(x=>x.onclick=()=>show(`${x.innerText} will be available here.`));
-  </script>
-</body>
-</html>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>MY AREA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#161616;--muted:#747474;--line:#ededed;--bg:#fafafa;--card:#fff;--accent:#ff5a36;--green:#159947}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif}.app{max-width:480px;margin:auto;min-height:100vh;background:#fff;padding-bottom:82px;box-shadow:0 0 40px #00000008}.top{padding:18px 18px 10px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:700;font-size:23px;letter-spacing:-.7px}.brand span{color:var(--accent)}.area{font-size:12px;color:var(--muted);margin-top:3px}.area b{color:var(--ink);font-size:13px}.bell{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;background:#fff;font-size:18px}.search{margin:8px 18px 14px;height:48px;background:#f5f5f5;border-radius:14px;display:flex;align-items:center;padding:0 14px;gap:10px;color:#999}.search input{border:0;outline:0;background:none;width:100%;font-size:14px}.ai{margin:0 18px 20px;padding:15px 16px;border:0;width:calc(100% - 36px);border-radius:16px;background:#171717;color:#fff;display:flex;align-items:center;gap:12px;text-align:left;cursor:pointer}.aiIcon{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,#ff7658,#8d63ff);display:grid;place-items:center;font-size:18px}.ai strong{display:block;font-size:14px}.ai small{display:block;color:#bdbdbd;margin-top:2px;font-size:11px}.section{padding:0 18px;margin-top:25px}.head{display:flex;align-items:center;justify-content:space-between;margin-bottom:13px}.head h2{font-size:18px;margin:0;letter-spacing:-.4px}.head button{border:0;background:none;color:var(--accent);font-size:12px}.cats{display:flex;gap:13px;overflow:auto;scrollbar-width:none;margin-right:-18px;padding-right:18px}.cats::-webkit-scrollbar{display:none}.cat{border:0;background:none;min-width:68px;padding:0;text-align:center}.catIcon{width:62px;height:62px;background:#f7f7f7;border-radius:18px;display:grid;place-items:center;font-size:27px;margin:auto}.cat span{display:block;font-size:12px;font-weight:600;margin-top:8px;white-space:nowrap}.cards{display:flex;gap:13px;overflow:auto;scrollbar-width:none;margin-right:-18px;padding-right:18px}.cards::-webkit-scrollbar{display:none}.store{min-width:245px;border:1px solid var(--line);border-radius:17px;overflow:hidden;background:#fff}.photo{height:128px;background:linear-gradient(135deg,#f0e8dc,#e4d2bf);display:grid;place-items:center;font-size:48px;position:relative}.open{position:absolute;left:10px;top:10px;background:#fff;padding:5px 8px;border-radius:8px;font-size:10px;font-weight:700;color:var(--green)}.info{padding:11px 12px}.info h3{font-size:14px;margin:0 0 5px}.meta{font-size:11px;color:var(--muted)}.row{display:flex;justify-content:space-between;margin-top:8px;font-size:11px}.product{min-width:155px;border:1px solid var(--line);border-radius:15px;overflow:hidden;background:#fff}.productImg{height:112px;background:#f4f4f4;display:grid;place-items:center;font-size:42px}.productInfo{padding:9px}.productInfo strong{font-size:12px;display:block}.price{font-size:12px;font-weight:700;margin-top:5px}.service{min-width:210px;border:1px solid var(--line);border-radius:16px;padding:14px;background:#fff}.serviceIcon{font-size:28px}.service h3{font-size:14px;margin:10px 0 4px}.service p{font-size:11px;color:var(--muted);margin:0;line-height:1.4}.nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(480px,100%);height:72px;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:space-around;align-items:center;z-index:10}.nav button{border:0;background:none;color:#999;font-size:10px;display:flex;flex-direction:column;gap:5px;align-items:center}.nav button:first-child{color:var(--ink);font-weight:700}.navIcon{font-size:20px}.toast{position:fixed;bottom:84px;left:50%;transform:translate(-50%,15px);opacity:0;background:#171717;color:#fff;border-radius:12px;padding:11px 15px;font-size:12px;transition:.2s;z-index:20;white-space:nowrap}.toast.show{opacity:1;transform:translate(-50%,0)}
+</style></head>
+<body><div class="app">
+<header class="top"><div><div class="brand">MY <span>AREA</span></div><div class="area">📍 <b>Your Area</b> · Current location</div></div><button class="bell" onclick="show('Notifications will appear here.')">♧</button></header>
+<div class="search">⌕ <input id="q" placeholder="Search shops, food, services and more"></div>
+<button class="ai" onclick="show('AREA AI is ready to help you find what you need.')"><span class="aiIcon">✦</span><span><strong>Ask AREA AI</strong><small>Tell me what you need around you</small></span><b style="margin-left:auto">›</b></button>
+<section class="section"><div class="head"><h2>What do you need?</h2><button onclick="show('More categories coming soon.')">See all</button></div><div class="cats">
+<button class="cat" onclick="show('Finding rides near you…')"><i class="catIcon">🚗</i><span>Rides</span></button><button class="cat" onclick="show('Finding shops near you…')"><i class="catIcon">🛍️</i><span>Shops</span></button><button class="cat" onclick="show('Finding food near you…')"><i class="catIcon">🍲</i><span>Food</span></button><button class="cat" onclick="show('Finding home services…')"><i class="catIcon">🏠</i><span>Home</span></button><button class="cat" onclick="show('Finding repair experts…')"><i class="catIcon">🔧</i><span>Repairs</span></button><button class="cat" onclick="show('More services coming…')"><i class="catIcon">＋</i><span>More</span></button></div></section>
+<section class="section"><div class="head"><h2>Popular around you</h2><button onclick="show('Opening nearby places…')">See all</button></div><div class="cards"><article class="store"><div class="photo">🍛<span class="open">OPEN</span></div><div class="info"><h3>Local Kitchen</h3><div class="meta">Nigerian food · 0.7 km</div><div class="row"><span>⭐ 4.8</span><span>25–40 min</span></div></div></article><article class="store"><div class="photo">🛒<span class="open">OPEN</span></div><div class="info"><h3>Neighbourhood Store</h3><div class="meta">Groceries · 0.4 km</div><div class="row"><span>⭐ 4.7</span><span>Delivery available</span></div></div></article><article class="store"><div class="photo">💈<span class="open">OPEN</span></div><div class="info"><h3>Fresh Cut</h3><div class="meta">Barber · 1.1 km</div><div class="row"><span>⭐ 4.9</span><span>Available today</span></div></div></article></div></section>
+<section class="section"><div class="head"><h2>Products near you</h2><button onclick="show('Opening nearby products…')">See all</button></div><div class="cards"><article class="product"><div class="productImg">🍚</div><div class="productInfo"><strong>5kg Rice</strong><div class="price">₦15,000</div></div></article><article class="product"><div class="productImg">🥛</div><div class="productInfo"><strong>Peak Milk</strong><div class="price">₦1,200</div></div></article><article class="product"><div class="productImg">🍞</div><div class="productInfo"><strong>Fresh Bread</strong><div class="price">₦1,000</div></div></article></div></section>
+<section class="section"><div class="head"><h2>People ready to help</h2><button onclick="show('Opening available services…')">See all</button></div><div class="cards"><article class="service"><div class="serviceIcon">⚡</div><h3>Electrician</h3><p>Verified providers near your current location.</p></article><article class="service"><div class="serviceIcon">🚿</div><h3>Plumber</h3><p>Find available help for your home.</p></article><article class="service"><div class="serviceIcon">💇🏾</div><h3>Hairdresser</h3><p>Home service providers around you.</p></article></div></section>
+<nav class="nav"><button><span class="navIcon">⌂</span>Home</button><button onclick="show('Explore is coming next.')"><span class="navIcon">⌕</span>Explore</button><button onclick="show('Your orders will appear here.')"><span class="navIcon">▱</span>Orders</button><button onclick="show('Profile will appear here.')"><span class="navIcon">○</span>Profile</button></nav>
+<div class="toast" id="toast"></div></div><script>const t=document.getElementById('toast');function show(m){t.textContent=m;t.classList.add('show');clearTimeout(window.tt);window.tt=setTimeout(()=>t.classList.remove('show'),1900)}document.getElementById('q').addEventListener('keydown',e=>{if(e.key==='Enter')show(e.target.value?`Searching for “${e.target.value}”…`:'Tell us what you need.')});</script></body></html>
