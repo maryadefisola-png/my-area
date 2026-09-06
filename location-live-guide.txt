@@ -1,0 +1,1 @@
+Live location is intentionally requested from a user action for browser privacy. The location foundation stores latitude, longitude, accuracy and timestamp locally, and exposes a watchPosition helper for future nearby discovery. Do not start continuous tracking until the app clearly explains why it is needed and the user opts in.
